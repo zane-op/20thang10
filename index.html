@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09051b">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Pacifico&display=swap');
+:root{--pink:#ff4fb8;--violet:#9d65ff;--cyan:#65f4ff;--bg:#09051b}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#fff;font-family:'Be Vietnam Pro',sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 15% 15%,#661b8b55,transparent 35%),radial-gradient(ellipse at 85% 30%,#103d7950,transparent 32%),radial-gradient(ellipse at 50% 100%,#8c175d44,transparent 42%);z-index:-2}
+#stars{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+.star{position:absolute;width:3px;height:3px;background:white;border-radius:50%;opacity:.7;animation:twinkle 3s infinite ease-in-out}
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1.5)}}
+nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:min(92%,900px);display:flex;align-items:center;justify-content:space-between;padding:12px 17px;border:1px solid #ffffff20;background:#100a26b8;backdrop-filter:blur(18px);border-radius:18px;z-index:10;box-shadow:0 8px 40px #0004}
+.brand{font-weight:900;letter-spacing:1px}.brand span{color:var(--pink)}
+.nav-tag{font-size:12px;color:#d8c8ff;border:1px solid #ffffff20;border-radius:99px;padding:7px 10px}
+section{min-height:100svh;padding:110px 20px 65px;display:flex;align-items:center;justify-content:center;position:relative}
+.hero{text-align:center;flex-direction:column}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:9px 15px;border:1px solid #ff8ddd66;border-radius:99px;background:#ff4fb812;color:#ffd6f0;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+h1{font-size:clamp(55px,11vw,120px);line-height:.98;margin:28px 0 18px;font-weight:900;letter-spacing:-5px}
+.gradient{background:linear-gradient(100deg,#fff 0%,#ff8bd7 28%,#c6a5ff 57%,#71f5ff 85%);background-clip:text;-webkit-background-clip:text;color:transparent;filter:drop-shadow(0 0 30px #ff4fb83a)}
+.script{font-family:'Pacifico',cursive;color:#ff9bdc;font-size:clamp(22px,4vw,36px);font-weight:400;letter-spacing:0}
+.hero p{max-width:650px;color:#d5cde9;line-height:1.9;font-size:clamp(14px,2vw,17px);margin:20px auto 28px}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{border:0;border-radius:14px;padding:14px 20px;font:700 14px 'Be Vietnam Pro';cursor:pointer;transition:.25s;display:inline-flex;align-items:center;gap:9px;text-decoration:none}
+.btn-primary{color:#160821;background:linear-gradient(100deg,#ff8bd7,#c4a0ff 55%,#7bf4ff);box-shadow:0 8px 30px #d24fa844}
+.btn-secondary{color:#fff;background:#ffffff0c;border:1px solid #ffffff2b}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.12)}
+.scrollhint{position:absolute;bottom:22px;color:#b7a9d2;font-size:11px;letter-spacing:2px}
+.scrollhint span{display:block;text-align:center;font-size:20px;margin-top:7px;animation:bob 1.5s infinite}
+@keyframes bob{50%{transform:translateY(5px)}}
+.wrap{width:min(100%,1000px);margin:auto}
+.section-head{text-align:center;margin-bottom:35px}
+.kicker{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
+h2{font-size:clamp(30px,5vw,52px);letter-spacing:-1.5px;margin:12px 0}
+.sub{color:#c9bfde;line-height:1.8;max-width:650px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.tile{position:relative;overflow:hidden;padding:25px 22px;border:1px solid #ffffff20;background:linear-gradient(145deg,#ffffff12,#ffffff05);border-radius:22px;min-height:190px;transition:.25s}
+.tile:before{content:"";position:absolute;width:120px;height:120px;border-radius:50%;background:var(--glow,#ff4fb8);filter:blur(65px);opacity:.25;right:-35px;top:-40px}
+.tile:hover{transform:translateY(-5px);border-color:#ff8bd766}
+.emoji{font-size:32px;display:block;margin-bottom:18px}
+.tile h3{margin:0 0 9px;font-size:17px}
+.tile p{color:#c9bfde;font-size:13px;line-height:1.8;margin:0}
+.quote{padding:clamp(25px,5vw,55px);border-radius:28px;border:1px solid #ffffff25;background:linear-gradient(130deg,#ff4fb817,#9166ff18,#62f5ff0d);text-align:center;position:relative;overflow:hidden}
+.quote .bigheart{font-size:35px;filter:drop-shadow(0 0 15px #ff4fb8)}
+.quote blockquote{font-size:clamp(20px,3.5vw,34px);font-weight:800;line-height:1.55;margin:18px auto;max-width:760px}
+.quote p{color:#d0c6e6;line-height:1.8;margin:0}
+.wishes{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:25px}
+.wish{display:flex;align-items:flex-start;gap:12px;padding:18px;border-radius:17px;background:#ffffff09;border:1px solid #ffffff15;color:#e8e0f7;line-height:1.7;font-size:14px}
+.wish b{color:#ff9bdc}
+.final{text-align:center;flex-direction:column}
+.final-card{width:min(100%,760px);padding:clamp(25px,5vw,55px);border-radius:30px;background:#110a27c9;border:1px solid #ffffff25;box-shadow:0 0 90px #b52f9140}
+.final h2{font-size:clamp(36px,7vw,70px);line-height:1.12}
+.final p{color:#d6cce9;line-height:1.9}
+.signature{font-family:'Pacifico',cursive;color:#ff9bdc;font-size:27px;margin-top:22px}
+footer{padding:25px;text-align:center;color:#84779f;font-size:11px;letter-spacing:1px}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:20}
+.floating-heart{position:fixed;bottom:-40px;pointer-events:none;z-index:15;animation:floatUp 4.5s linear forwards}
+@keyframes floatUp{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.tile{min-height:auto}.wishes{grid-template-columns:1fr}h1{letter-spacing:-3px}section{padding-left:16px;padding-right:16px}.nav-tag{font-size:10px}}
+</style>
+</head>
+<body>
+<div id="stars"></div><canvas id="confetti"></canvas>
+<section class="hero" id="top">
+  <div class="eyebrow">✦ A LITTLE CELEBRATION FOR YOU ✦</div>
+  <h1 class="gradient">HAPPY<br>20/10</h1>
+  <div class="script">To all the wonderful girls ♡</div>
+  <p>Hôm nay là ngày dành cho những điều dịu dàng, những nụ cười xinh xắn và những cô gái khiến thế giới này trở nên rực rỡ hơn. Chúc các cậu có một ngày 20/10 thật vui, thật đáng nhớ và ngập tràn yêu thương! 💗</p>
+  <div class="actions"><button class="btn btn-primary" onclick="document.querySelector('#wishes').scrollIntoView({behavior:'smooth'})">Mở lời chúc ✨</button><button class="btn btn-secondary" onclick="celebrate()">Bật chế độ rực rỡ 🎉</button></div>
+  <div class="scrollhint">SCROLL TO FEEL THE LOVE<span>⌄</span></div>
+</section>
+<section id="wishes">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">A WISH FOR EVERY ONE OF YOU</div><h2 class="gradient">các cậu xứng đáng với những điều tuyệt nhất</h2><p class="sub">Không cần phải trở thành ai khác cả — phiên bản hiện tại của các cậu đã có nét đẹp riêng rồi.</p></div>
+  <div class="grid">
+   <article class="tile" style="--glow:#ff4fb8"><span class="emoji">🌷</span><h3>Luôn xinh đẹp theo cách riêng</h3><p>Mong các cậu luôn tự tin, yêu bản thân và tỏa sáng theo cách chẳng ai có thể thay thế.</p></article>
+   <article class="tile" style="--glow:#9d65ff"><span class="emoji">💫</span><h3>Học tập hết mình, thành công hết nấc</h3><p>Chúc mọi nỗ lực của các cậu đều được đền đáp, bài khó hóa dễ, điểm tốt cứ thế về tay.</p></article>
+   <article class="tile" style="--glow:#65f4ff"><span class="emoji">🫶</span><h3>Được yêu thương thật nhiều</h3><p>Mong các cậu gặp những người chân thành, được lắng nghe, trân trọng và đối xử bằng sự tử tế.</p></article>
+   <article class="tile" style="--glow:#ffb86b"><span class="emoji">🍀</span><h3>May mắn luôn đồng hành</h3><p>Đi đâu cũng gặp điều dễ thương, làm gì cũng thuận lợi, những dự định nhỏ đều thành hiện thực.</p></article>
+   <article class="tile" style="--glow:#ff7d8b"><span class="emoji">🌈</span><h3>Ngày nào cũng có lý do để vui</h3><p>Mong những ngày mệt mỏi sẽ ngắn lại, những niềm vui nho nhỏ sẽ ở lại lâu hơn.</p></article>
+   <article class="tile" style="--glow:#a5ffbd"><span class="emoji">👑</span><h3>Luôn là nữ chính cuộc đời mình</h3><p>Hãy cứ có ước mơ, có chính kiến, có cá tính và tự tin bước về phía điều các cậu mong muốn.</p></article>
+  </div>
+ </div>
+</section>
+<section>
+ <div class="wrap">
+  <div class="quote"><div class="bigheart">💖 ✨ 💖</div><blockquote>“Chúc các cậu không chỉ rực rỡ vào ngày 20/10, mà còn được yêu thương và hạnh phúc trong những ngày khác.”</blockquote><p>Vì các cậu xứng đáng với những điều tốt đẹp — hôm nay và mỗi ngày sau đó.</p></div>
+  <div class="wishes">
+   <div class="wish"><span>💌</span><div><b>Gửi một lời chúc:</b><br>Mong các cậu luôn giữ được nụ cười khiến ngày bình thường cũng trở nên đặc biệt.</div></div>
+   <div class="wish"><span>🧸</span><div><b>Gửi một cái ôm:</b><br>Những lúc áp lực, hãy nhớ nghỉ ngơi và dịu dàng với chính mình nhé.</div></div>
+   <div class="wish"><span>🌟</span><div><b>Gửi một lời nhắc:</b><br>các cậu không cần hoàn hảo để trở nên tuyệt vời. Cứ là chính các cậu thôi!</div></div>
+   <div class="wish"><span>🎀</span><div><b>Gửi một điều ước:</b><br>Chúc mọi điều các cậu âm thầm mong đợi sẽ đến vào một ngày thật đẹp.</div></div>
+  </div>
+ </div>
+</section>
+<section class="final">
+ <div class="final-card"><div class="kicker">ONE LAST THING…</div><h2 class="gradient">Ngày của các cậu,<br>hãy thật vui nhé! 💗</h2><p>Chúc các cậu nhận được thật nhiều hoa, quà, lời khen và cả những bất ngờ đáng yêu. Cảm ơn các cậu vì đã góp phần làm cho những ngày đi học trở nên nhiều màu sắc hơn.</p><p>Chúc tất cả những điều dịu dàng nhất sẽ tìm đến các cậu — hôm nay, ngày mai và thật nhiều ngày về sau.</p><div class="script">You are loved. You are enough. You shine. ✨</div><div class="signature">Happy Vietnamese Women's Day!</div><div style="margin-top:25px"><button class="btn btn-primary" onclick="celebrate()">Thả tim ngập màn hình 💞</button><button class="btn btn-secondary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Về đầu trang ↑</button></div></div>
+</section>
+<footer>MADE WITH 💗 · 20/10 SPECIAL · SPREAD KINDNESS, SPREAD SPARKLE</footer>
+<script>
+const stars=document.getElementById('stars');
+for(let i=0;i<95;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';s.style.opacity=Math.random();stars.appendChild(s)}
+const canvas=document.getElementById('confetti'),ctx=canvas.getContext('2d');let pieces=[],raf;
+function resize(){canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}resize();addEventListener('resize',resize);
+function celebrate(){for(let i=0;i<170;i++)pieces.push({x:innerWidth/2+(Math.random()-.5)*innerWidth*.7,y:innerHeight*.45+(Math.random()-.5)*100,vx:(Math.random()-.5)*8,vy:-Math.random()*9-2,size:Math.random()*7+3,life:100+Math.random()*70,rot:Math.random()*6,emoji:Math.random()>.55?'💖':null,h:['#ff70c8','#c5a2ff','#70f5ff','#ffe18a','#ffffff'][Math.floor(Math.random()*5)]});if(!raf)draw();for(let i=0;i<18;i++)setTimeout(()=>heart(),i*100)}
+function draw(){ctx.clearRect(0,0,innerWidth,innerHeight);pieces=pieces.filter(p=>p.life-->0&&p.y<innerHeight+40);for(let p of pieces){p.x+=p.vx;p.y+=p.vy;p.vy+=.13;p.rot+=.1;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);if(p.emoji){ctx.font=p.size*2+'px serif';ctx.fillText(p.emoji,0,0)}else{ctx.fillStyle=p.h;ctx.fillRect(0,0,p.size,p.size*1.5)}ctx.restore()}if(pieces.length)raf=requestAnimationFrame(draw);else{cancelAnimationFrame(raf);raf=null;ctx.clearRect(0,0,innerWidth,innerHeight)}}
+function heart(){let e=document.createElement('div');e.className='floating-heart';e.textContent=['💗','💖','💕','✨','🌸'][Math.floor(Math.random()*5)];e.style.left=Math.random()*100+'vw';e.style.fontSize=(18+Math.random()*24)+'px';e.style.animationDuration=(3+Math.random()*3)+'s';document.body.appendChild(e);setTimeout(()=>e.remove(),6500)}
+</script>
+</body>
+</html>
